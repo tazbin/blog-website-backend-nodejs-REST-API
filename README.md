@@ -2,6 +2,8 @@
 
 **blog-website** is one of my personal projects where registered blogger write blogs. Bloggers can also comment or react to blogs. This repository holds the code of it's backend which is a **RESTful API**.
 
+<em> The frontend of this project can be found [here (REST API)](https://github.com/tazbin/blog-website-frontend_Angular). </em>
+
 ## Features:
 - bloggers can create their profiles (token based authentication)
 - bloggers can edit their profile
