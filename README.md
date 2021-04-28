@@ -36,14 +36,14 @@
 
 ## How to install & run:
 ### Using Git (recommanded)
-1. Navigate & open cli into the directory where you want to put this project. Initialize git & Clone this project (will be cloned inside myproject folder) using this command.
+1. Navigate & open cli into the directory where you want to put this project. Initialize git & Clone this project (will be cloned inside myProject folder) using this command.
    
 ```bash
 # initialize git
 git init
 
 # clone the project
-git clone https://github.com/tazbin/blog-website-backend_nodejs_REST_API.git ./myproject
+git clone https://github.com/tazbin/blog-website-backend_nodejs_REST_API.git ./myProject
 ```
 ### Using manual download ZIP
 1. Download repository
