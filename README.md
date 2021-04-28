@@ -82,16 +82,16 @@ Press CTRL + C to stop the server.
 
 ### User related
 - [ ] [Resgister](docs/user/register.md): `POST localhost:3000/user/register`
-- [ ] [Login](docs/user/login.md): `POST localhost:3000/user/login`
+- [ ] [Login](docs/user/login.md): `GET localhost:3000/user/login`
 - [x] [Edit user profile](docs/user/editUserProfile.md): `PUT localhost:3000/user/editProfile`
 - [x] [Refresh tokens](docs/user/refreshTokens.md): `POST localhost:3000/user/me/refresToken`
 - [x] [Get loggedin user's info](docs/user/getLoggedInUserInfo.md): `GET localhost:3000/user/me`
 - [ ] [Get blogger's info](docs/user/getBloggersInfo.md): `GET localhost:3000/user/bloggerProfile/:bloggerId`
 
 ### Category related
-- [x] Create a new category: `POST localhost:3000/category`
-- [ ] Get list of all categories: `POST localhost:3000/category`
-- [ ] Get list of all categories & blog counts: `PUT localhost:3000/category/categorizedBlogs`
+- [x] [Create a new category](docs/category/createCategory.md): `POST localhost:3000/category`
+- [ ] [Get list of all categories](docs/category/getListOfCategories.md): `GET localhost:3000/category`
+- [ ] [Get list of all categories & blog counts](docs/category/getListOfCategoriezedBlogs.md): `GET localhost:3000/category/categorizedBlogs`
 
 ### Blog related
 - [ ] Create a new blog: `POST localhost:3000/blog`
