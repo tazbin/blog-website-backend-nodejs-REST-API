@@ -34,4 +34,44 @@
 - [x] jsonwebtoken: ^8.5.1,
 - [x] mongoose: ^5.12.2
 
+## How to install & run
+### Using Git (recommanded)
+1. Navigate & open cli into the directory where you want to put this project. Initialize git & Clone this project (will be cloned inside myproject folder) using this command.
+   
+```bash
+# initialize git
+git init
+
+# clone the project
+git clone https://github.com/tazbin/blog-website-backend_nodejs_REST_API.git ./myproject
+```
+### Using manual download ZIP
+1. Dowbload repository
+2. Extract the zip file, navigate into it & copy the folder to you desired dirctory
+
+### Install npm dependencies after cloning or downloading
+```bash
+npm install
+```
+
+### Setting up environments
+1. There is a file named `.env.example` on the root directory of the project
+2. Create a new file by coping & pasting the file on the root directory & rename it to just `.env`
+3. The `.env` file is already ignored, so your credentials insite it won't be commited
+4. Change the values of the file. Make changes of comment to the `.env.example` file while adding new constants to the `.env` file.
+
+### Run the project
+```bash
+npm start
+```
+
+You can be sure that server is running by checking this output in the command window
+```bash
+server running at port 3000...
+mongodb successfully connected...
+mongodb connected...
+```
+
+Press CTRL + C to stop the server.
+
 
