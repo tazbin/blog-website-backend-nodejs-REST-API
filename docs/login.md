@@ -1,12 +1,14 @@
 ## Login
 To login a user, collect loggedin user data & tokens
 
-### URL: `localhost:5000/user/login`
-### Methods: `POST`
-### Methods: `POST`
+**URL**: `localhost:5000/user/login`
+
+**Methods**: `POST`
+
+**Methods**: `POST`
 
 ## Request body
-Data:
+**Data**:
 ```bash
 {
     "email": "t@gmail.com",
@@ -15,8 +17,9 @@ Data:
 ```
 
 ## Success response
-### Code: `200 OK`
-Content:
+**Code**: `200 OK`
+
+**Content**:
 ```bash
 {
     "user": {
@@ -30,8 +33,10 @@ Content:
 ```
 
 ## Error response
-### Condition: If 'email' or 'password' is wrong or any one is absent
-### Code: `401 Bad Request`
+**Condition**: If 'email' or 'password' is wrong or any one is absent.
+
+**Code**: `401 Bad Request`
+
 Content:
 ```bash
 {
