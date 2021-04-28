@@ -81,27 +81,27 @@ Press CTRL + C to stop the server.
 - [ ] **Authentication not required**
 
 ### User related
-- [ ] Resgister: `POST localhost:5000/user/resgister`
-- [ ] Login: `POST localhost:5000/user/login`
-- [x] Edit user profile: `PUT localhost:5000/user/editProfile`
-- [x] Refresh tokens: `POST localhost:5000/user/me/refresToken`
-- [x] Get loggedin user's info: `GET localhost:5000/user/me`
-- [ ] Get blogger's info: `GET localhost:5000/user/bloggerProfile/:bloggerId`
-- [x] Logout: `DELETE localhost:5000/user/logout`
+- [ ] Resgister: `POST localhost:3000/user/resgister`
+- [ ] [Login](docs/login.md): `POST localhost:3000/user/login`
+- [x] Edit user profile: `PUT localhost:3000/user/editProfile`
+- [x] Refresh tokens: `POST localhost:3000/user/me/refresToken`
+- [x] Get loggedin user's info: `GET localhost:3000/user/me`
+- [ ] Get blogger's info: `GET localhost:3000/user/bloggerProfile/:bloggerId`
+- [x] Logout: `DELETE localhost:3000/user/logout`
 
 ### Category related
-- [x] Create a new category: `POST localhost:5000/category`
-- [ ] Get list of all categories: `POST localhost:5000/category`
-- [ ] Get list of all categories & blog counts: `PUT localhost:5000/category/categorizedBlogs`
+- [x] Create a new category: `POST localhost:3000/category`
+- [ ] Get list of all categories: `POST localhost:3000/category`
+- [ ] Get list of all categories & blog counts: `PUT localhost:3000/category/categorizedBlogs`
 
 ### Blog related
-- [ ] Create a new blog: `POST localhost:5000/blog`
-- [ ] Get list of all blogs with pagination: `GET localhost:5000/blog`
-- [ ] Get list of all blogs of a blogger: `GET localhost:5000/blog/blogger/:bloggerId`
-- [ ] Get details of a blog: `GET localhost:5000/blog/:blogId`
-- [ ] Get list of all blogs of a selected category: `GET localhost:5000/blog/category/:categoryId`
-- [x] React to a blog: `PUT localhost:5000/blog/react`
-- [x] Comment to a blog: `POST localhost:5000/blog/comment`
-- [x] Delete a comment: `DELETE localhost:5000/blog/comment`
+- [ ] Create a new blog: `POST localhost:3000/blog`
+- [ ] Get list of all blogs with pagination: `GET localhost:3000/blog`
+- [ ] Get list of all blogs of a blogger: `GET localhost:3000/blog/blogger/:bloggerId`
+- [ ] Get details of a blog: `GET localhost:3000/blog/:blogId`
+- [ ] Get list of all blogs of a selected category: `GET localhost:3000/blog/category/:categoryId`
+- [x] React to a blog: `PUT localhost:3000/blog/react`
+- [x] Comment to a blog: `POST localhost:3000/blog/comment`
+- [x] Delete a comment: `DELETE localhost:3000/blog/comment`
 
 
