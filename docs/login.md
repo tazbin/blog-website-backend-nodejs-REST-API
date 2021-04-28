@@ -5,7 +5,7 @@ To login a user, collect loggedin user data & tokens
 
 **Methods**: `POST`
 
-**Methods**: `POST`
+**Authentication**: Not required
 
 ## Request body
 **Data**:
@@ -37,7 +37,7 @@ To login a user, collect loggedin user data & tokens
 
 **Code**: `401 Bad Request`
 
-Content:
+**Content**:
 ```bash
 {
     "error": {
