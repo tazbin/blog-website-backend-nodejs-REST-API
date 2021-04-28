@@ -81,13 +81,12 @@ Press CTRL + C to stop the server.
 - [ ] **Authentication not required**
 
 ### User related
-- [ ] Resgister: `POST localhost:3000/user/resgister`
-- [ ] [Login](docs/login.md): `POST localhost:3000/user/login`
-- [x] Edit user profile: `PUT localhost:3000/user/editProfile`
-- [x] Refresh tokens: `POST localhost:3000/user/me/refresToken`
-- [x] Get loggedin user's info: `GET localhost:3000/user/me`
-- [ ] Get blogger's info: `GET localhost:3000/user/bloggerProfile/:bloggerId`
-- [x] Logout: `DELETE localhost:3000/user/logout`
+- [ ] [Resgister](docs/user/register.md): `POST localhost:3000/user/register`
+- [ ] [Login](docs/user/login.md)): `POST localhost:3000/user/login`
+- [x] [Edit user profile](docs/user/editUserProfile.md): `PUT localhost:3000/user/editProfile`
+- [x] [Refresh tokens](docs/user/refreshTokens.md): `POST localhost:3000/user/me/refresToken`
+- [x] [Get loggedin user's info](docs/user/getLoggedInUserInfo.md): `GET localhost:3000/user/me`
+- [ ] [Get blogger's info](docs/user/getBloggersInfo.md): `GET localhost:3000/user/bloggerProfile/:bloggerId`
 
 ### Category related
 - [x] Create a new category: `POST localhost:3000/category`

@@ -1,17 +1,23 @@
-## Login
-To login a user, collect loggedin user data & tokens
+## Register
+To register a new user, collect registered user data & tokens
 
-**URL**: `localhost:5000/user/login`
+**URL**: `localhost:3000/user/register`
 
-**Methods**: `POST`
+**Method**: `POST`
 
 **Authentication**: Not required
 
 ## Request body
+**Required fields:** `email`, `first_name`, `last_name`, `password`
+
+**Optional fields:**
+
 **Data**:
 ```bash
 {
     "email": "t@gmail.com",
+    "first_name": "Tazbinur",
+    "last_name": "Rahaman",
     "password": "123"
 }
 ```
@@ -33,16 +39,16 @@ To login a user, collect loggedin user data & tokens
 ```
 
 ## Error response
-**Condition**: If 'email' or 'password' is wrong or any one is absent.
+**Condition**: If any of the body params is absent or the email is already registered.
 
-**Code**: `401 Unauthorized`
+**Code**: `409 Conflict`
 
 **Content**:
 ```bash
 {
     "error": {
-        "status": 401,
-        "message": "Incorrect email or password"
+        "status": 409,
+        "message": "t@gmail.com already exists"
     }
 }
 ```
