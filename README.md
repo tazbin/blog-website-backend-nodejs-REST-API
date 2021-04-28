@@ -34,7 +34,7 @@
 - [x] jsonwebtoken: ^8.5.1,
 - [x] mongoose: ^5.12.2
 
-## How to install & run
+## How to install & run:
 ### Using Git (recommanded)
 1. Navigate & open cli into the directory where you want to put this project. Initialize git & Clone this project (will be cloned inside myproject folder) using this command.
    
@@ -46,8 +46,8 @@ git init
 git clone https://github.com/tazbin/blog-website-backend_nodejs_REST_API.git ./myproject
 ```
 ### Using manual download ZIP
-1. Dowbload repository
-2. Extract the zip file, navigate into it & copy the folder to you desired dirctory
+1. Download repository
+2. Extract the zip file, navigate into it & copy the folder to you desired directory
 
 ### Install npm dependencies after cloning or downloading
 ```bash
@@ -73,5 +73,35 @@ mongodb connected...
 ```
 
 Press CTRL + C to stop the server.
+
+## API endpoints:
+
+#### *Indication*
+- [x] **Authentication required**
+- [ ] **Authentication not required**
+
+### User related
+- [ ] Resgister: `POST localhost:5000/user/resgister`
+- [ ] Login: `POST localhost:5000/user/login`
+- [x] Edit user profile: `PUT localhost:5000/user/editProfile`
+- [x] Refresh tokens: `POST localhost:5000/user/me/refresToken`
+- [x] Get loggedin user's info: `GET localhost:5000/user/me`
+- [ ] Get blogger's info: `GET localhost:5000/user/bloggerProfile/:bloggerId`
+- [x] Logout: `DELETE localhost:5000/user/logout`
+
+### Category related
+- [x] Create a new category: `POST localhost:5000/category`
+- [ ] Get list of all categories: `POST localhost:5000/category`
+- [ ] Get list of all categories & blog counts: `PUT localhost:5000/category/categorizedBlogs`
+
+### Blog related
+- [ ] Create a new blog: `POST localhost:5000/blog`
+- [ ] Get list of all blogs with pagination: `GET localhost:5000/blog`
+- [ ] Get list of all blogs of a blogger: `GET localhost:5000/blog/blogger/:bloggerId`
+- [ ] Get details of a blog: `GET localhost:5000/blog/:blogId`
+- [ ] Get list of all blogs of a selected category: `GET localhost:5000/blog/category/:categoryId`
+- [x] React to a blog: `PUT localhost:5000/blog/react`
+- [x] Comment to a blog: `POST localhost:5000/blog/comment`
+- [x] Delete a comment: `DELETE localhost:5000/blog/comment`
 
 
