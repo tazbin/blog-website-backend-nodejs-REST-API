@@ -36,7 +36,7 @@ To get the information of loggedin user
 ```
 
 ## Error response
-**Condition**: If accessToken in absent or invalid or expired.
+**Condition**: If `accessToken` in absent or invalid or expired.
 
 **Code**: `401 Unauthorized`
 

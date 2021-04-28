@@ -82,7 +82,7 @@ Press CTRL + C to stop the server.
 
 ### User related
 - [ ] [Resgister](docs/user/register.md): `POST localhost:3000/user/register`
-- [ ] [Login](docs/user/login.md)): `POST localhost:3000/user/login`
+- [ ] [Login](docs/user/login.md): `POST localhost:3000/user/login`
 - [x] [Edit user profile](docs/user/editUserProfile.md): `PUT localhost:3000/user/editProfile`
 - [x] [Refresh tokens](docs/user/refreshTokens.md): `POST localhost:3000/user/me/refresToken`
 - [x] [Get loggedin user's info](docs/user/getLoggedInUserInfo.md): `GET localhost:3000/user/me`

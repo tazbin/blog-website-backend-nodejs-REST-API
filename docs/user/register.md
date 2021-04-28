@@ -39,7 +39,7 @@ To register a new user, collect registered user data & tokens
 ```
 
 ## Error response
-**Condition**: If any of the body params is absent or the email is already registered.
+**Condition**: If any of the required params is absent or the `email` is already registered.
 
 **Code**: `409 Conflict`
 

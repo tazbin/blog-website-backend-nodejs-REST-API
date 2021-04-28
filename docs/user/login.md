@@ -37,7 +37,7 @@ To login a user, collect loggedin user data & tokens
 ```
 
 ## Error response
-**Condition**: If any of the required fields is absent, 'email' or 'password' is wrong.
+**Condition**: If any of the required fields is absent, `email` or `password` is wrong.
 
 **Code**: `401 Unauthorized`
 

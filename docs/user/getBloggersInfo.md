@@ -1,5 +1,5 @@
-## Edit user profile
-To update/edit a registered user's information
+## Get bloggers info
+To get registered blogger's detail information
 
 **URL**: `localhost:3000/user/bloggerProfile/:bloggerId`
 
@@ -38,7 +38,7 @@ To update/edit a registered user's information
 ```
 
 ## Error response
-**Condition**: If bloggerId is invalid
+**Condition**: If `bloggerId` is invalid
 
 **Code**: `400 Bad Request`
 
