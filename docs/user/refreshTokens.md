@@ -32,7 +32,7 @@ To refresh tokens & generate new pair of accessToken, refreshToken
 ```
 
 ## Error response
-**Condition**: If any of the required fields is absent or invalid or expired refreshToken.
+**Condition**: If the refreshToken is absent, invalid or expired.
 
 **Code**: `403 Forbidden`
 

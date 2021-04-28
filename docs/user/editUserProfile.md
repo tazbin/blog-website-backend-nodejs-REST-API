@@ -38,7 +38,7 @@ To update/edit a registered user's information
 ```
 
 ## Error response
-**Condition**: If any of the required fields is absent.
+**Condition**: If any of the required fields is absent, `accessToken` is absent.
 
 **Code**: `500 Internal Server Error`
 

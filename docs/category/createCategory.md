@@ -32,7 +32,7 @@ To create a new category
 ```
 
 ## Error response
-**Condition**: If any of the required params is absent or the `accessToken` is absent, invalid or expired
+**Condition**: If any of the required params is absent or the `accessToken` is absent.
 
 **Code**: `500 Internal Server Error`
 

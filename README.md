@@ -94,13 +94,13 @@ Press CTRL + C to stop the server.
 - [ ] [Get list of all categories & blog counts](docs/category/getListOfCategoriezedBlogs.md): `GET localhost:3000/category/categorizedBlogs`
 
 ### Blog related
-- [ ] Create a new blog: `POST localhost:3000/blog`
-- [ ] Get list of all blogs with pagination: `GET localhost:3000/blog`
-- [ ] Get list of all blogs of a blogger: `GET localhost:3000/blog/blogger/:bloggerId`
-- [ ] Get details of a blog: `GET localhost:3000/blog/:blogId`
-- [ ] Get list of all blogs of a selected category: `GET localhost:3000/blog/category/:categoryId`
-- [x] React to a blog: `PUT localhost:3000/blog/react`
-- [x] Comment to a blog: `POST localhost:3000/blog/comment`
-- [x] Delete a comment: `DELETE localhost:3000/blog/comment`
+- [ ] [Create a new blog](docs/blog/createBlog.md): `POST localhost:3000/blog`
+- [ ] [Get list of all blogs with pagination](docs/blog/getLIstofAllBlogsWithPagination.md): `GET localhost:3000/blog?page=:pageNumber`
+- [ ] [Get list of all blogs of a blogger](docs/blog/getAllBlogsOfBlogger.md): `GET localhost:3000/blog/blogger/:bloggerId?page=:pageNumber`
+- [ ] [Get details of a blog](docs/blog/getDetailsOfBlog.md): `GET localhost:3000/blog/:blogId`
+- [ ] [Get list of all blogs of a selected category](docs/blog/getBlogsOfSelectedCategory.md): `GET localhost:3000/blog/category/:categoryId`
+- [x] [React to a blog](docs/blog/reactToBlog.md): `PUT localhost:3000/blog/react`
+- [x] [Comment to a blog](docs/blog/commentToBlog.md): `POST localhost:3000/blog/comment`
+- [x] [Delete a comment](docs/blog/deleteCommentFromBlog.md): `DELETE localhost:3000/blog/comment`
 
 
