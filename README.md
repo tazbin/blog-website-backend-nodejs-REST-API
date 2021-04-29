@@ -1,16 +1,16 @@
 # blog-website-backend_REST_API
 
-**blog-website** is one of my personal projects where registered blogger write blogs. Bloggers can also comment or react to blogs. This repository holds the code of it's backend which is a **RESTful API**.
+**blog-website** is one of my personal projects where registered bloggers write blogs. Bloggers can also comment or react to blogs. This repository holds the code of it's backend which is a **RESTful API**.
 
 <em> The frontend of this project can be found [here (REST API)](https://github.com/tazbin/blog-website-frontend_Angular). </em>
 
 ## Features:
-- bloggers can create their profiles (token based authentication)
+- bloggers can create their profiles (token-based authentication)
 - bloggers can edit their profile
 - bloggers can write blogs. They can set the category of their blog (i.e. travel, medical, tech etc)
 - registered bloggers can comment on their own or others blog
 - registered bloggers can also react on others blog. They can react **like**, **love**, **sad**, **haha**, **informative** to blogs
-- unregistred public users can read blogs but cann't comment or react n blogs
+- unregistered public users can read blogs but can't comment or react n blogs
 - Blogs of a particular category can be viewed
 
 ## Tech used:
@@ -35,8 +35,8 @@
 - [x] mongoose: ^5.12.2
 
 ## How to install & run:
-### Using Git (recommanded)
-1. Navigate & open cli into the directory where you want to put this project. Initialize git & Clone this project (will be cloned inside myProject folder) using this command.
+### Using Git (recommended)
+1. Navigate & open CLI into the directory where you want to put this project. Initialize git & Clone this project (will be cloned inside myProject folder) using this command.
    
 ```bash
 # initialize git
@@ -47,7 +47,7 @@ git clone https://github.com/tazbin/blog-website-backend_nodejs_REST_API.git ./m
 ```
 ### Using manual download ZIP
 1. Download repository
-2. Extract the zip file, navigate into it & copy the folder to you desired directory
+2. Extract the zip file, navigate into it & copy the folder to your desired directory
 
 ### Install npm dependencies after cloning or downloading
 ```bash
@@ -56,8 +56,8 @@ npm install
 
 ### Setting up environments
 1. There is a file named `.env.example` on the root directory of the project
-2. Create a new file by coping & pasting the file on the root directory & rename it to just `.env`
-3. The `.env` file is already ignored, so your credentials insite it won't be commited
+2. Create a new file by copying & pasting the file on the root directory & rename it to just `.env`
+3. The `.env` file is already ignored, so your credentials inside it won't be committed
 4. Change the values of the file. Make changes of comment to the `.env.example` file while adding new constants to the `.env` file.
 
 ### Run the project
@@ -65,7 +65,7 @@ npm install
 npm start
 ```
 
-You can be sure that server is running by checking this output in the command window
+You can be sure that the server is running by checking this output in the command window
 ```bash
 server running at port 3000...
 mongodb successfully connected...
@@ -102,5 +102,3 @@ Press CTRL + C to stop the server.
 - [x] [React to a blog](docs/blog/reactToBlog.md): `PUT localhost:3000/blog/react`
 - [x] [Comment to a blog](docs/blog/commentToBlog.md): `POST localhost:3000/blog/comment`
 - [x] [Delete a comment](docs/blog/deleteCommentFromBlog.md): `DELETE localhost:3000/blog/comment`
-
-
