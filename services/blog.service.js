@@ -118,19 +118,37 @@ const reactBlog = async(blog, reactBody) => {
             }
         });
 
+        for (const react in blog.reacts) {
+            console.log(react);
+            // expected "like, love, funny, sad, informative" in console
+            // instead, getting so many other things in console
+
+            /** I want to do this */
+            // blog.reacts[react] = blog.reacts[react].filter(r => {
+            //     if( reactBody.userId == r ) {
+            //         oldReactName = react;
+            //     } else {
+            //         return r;
+            //     }
+            // });
+        }
+
         if( oldReactName != reactBody.reactName ) {
 
-            if( reactBody.reactName == 'like' ) {
-                blog.reacts.like.push(reactBody.userId)
-            } else if( reactBody.reactName == 'love' ) {
-                blog.reacts.love.push(reactBody.userId)
-            } else if( reactBody.reactName == 'funny' ) {
-                blog.reacts.funny.push(reactBody.userId)
-            } else if( reactBody.reactName == 'sad' ) {
-                blog.reacts.sad.push(reactBody.userId)
-            } else if( reactBody.reactName == 'informative' ) {
-                blog.reacts.informative.push(reactBody.userId)
-            }
+            // if( reactBody.reactName == 'like' ) {
+            //     blog.reacts.like.push(reactBody.userId)
+            // } else if( reactBody.reactName == 'love' ) {
+            //     blog.reacts.love.push(reactBody.userId)
+            // } else if( reactBody.reactName == 'funny' ) {
+            //     blog.reacts.funny.push(reactBody.userId)
+            // } else if( reactBody.reactName == 'sad' ) {
+            //     blog.reacts.sad.push(reactBody.userId)
+            // } else if( reactBody.reactName == 'informative' ) {
+            //     blog.reacts.informative.push(reactBody.userId)
+            // }
+
+            /** this works fine! */
+            blog.reacts[reactBody.reactName].push(reactBody.userId);
 
         }
 
