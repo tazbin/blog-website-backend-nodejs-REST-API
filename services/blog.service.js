@@ -76,6 +76,23 @@ const reactBlog = async(blog, reactBody) => {
 
     try {
 
+        /** 
+        "blogs": {
+            "reacts": {
+                "like": [
+                    "6069c94d7f65a454540d1384"
+                ],
+                "love": [],
+                "funny": [
+                    "606efbba17e43a04cce0286d"
+                ],
+                "sad": [],
+                "informative": []
+            },
+            ...
+        }
+        */
+
         let oldReactName = '';
 
         blog.reacts.like = blog.reacts.like.filter(r => {
@@ -119,7 +136,7 @@ const reactBlog = async(blog, reactBody) => {
         });
 
         for (const react in blog.reacts) {
-            console.log(react);
+            // console.log(react);
             // expected "like, love, funny, sad, informative" in console
             // instead, getting so many other things in console
 
