@@ -67,106 +67,25 @@ const countBlogs = async(countParams) => {
 
 const reactBlog = async(blog, reactBody) => {
 
-    /* reactBody : {
-        blogId: "6069c9b37f65a454540d138a", // the blog which is reacted
-        reactName: "Like", // reaction name
-        userId: "6069c94d7f65a454540d1384" // the user id who reacted
-        } 
-    */
-
     try {
 
-        /** 
-        "blogs": {
-            "reacts": {
-                "like": [
-                    "6069c94d7f65a454540d1384"
-                ],
-                "love": [],
-                "funny": [
-                    "606efbba17e43a04cce0286d"
-                ],
-                "sad": [],
-                "informative": []
-            },
-            ...
-        }
-        */
-
+        const allReacts = ['like', 'love', 'funny', 'sad', 'informative'];
         let oldReactName = '';
 
-        blog.reacts.like = blog.reacts.like.filter(r => {
-            if( reactBody.userId == r ) {
-                oldReactName = 'like';
-            } else {
-                return r;
-            }
+        // remove all reacts of this user
+        allReacts.forEach(react => {
+            blog.reacts[react] = blog.reacts[react].filter(r => {
+                if( reactBody.userId == r ) {
+                    oldReactName = react;
+                } else {
+                    return r;
+                }
+            });
         });
 
-        blog.reacts.love = blog.reacts.love.filter(r => {
-            if( reactBody.userId == r ) {
-                oldReactName = 'love';
-            } else {
-                return r;
-            }
-        });
-
-        blog.reacts.funny = blog.reacts.funny.filter(r => {
-            if( reactBody.userId == r ) {
-                oldReactName = 'funny';
-            } else {
-                return r;
-            }
-        });
-
-        blog.reacts.sad = blog.reacts.sad.filter(r => {
-            if( reactBody.userId == r ) {
-                oldReactName = 'sad';
-            } else {
-                return r;
-            }
-        });
-
-        blog.reacts.informative = blog.reacts.informative.filter(r => {
-            if( reactBody.userId == r ) {
-                oldReactName = 'informative';
-            } else {
-                return r;
-            }
-        });
-
-        for (const react in blog.reacts) {
-            // console.log(react);
-            // expected "like, love, funny, sad, informative" in console
-            // instead, getting so many other things in console
-
-            /** I want to do this */
-            // blog.reacts[react] = blog.reacts[react].filter(r => {
-            //     if( reactBody.userId == r ) {
-            //         oldReactName = react;
-            //     } else {
-            //         return r;
-            //     }
-            // });
-        }
-
+        // set new react
         if( oldReactName != reactBody.reactName ) {
-
-            // if( reactBody.reactName == 'like' ) {
-            //     blog.reacts.like.push(reactBody.userId)
-            // } else if( reactBody.reactName == 'love' ) {
-            //     blog.reacts.love.push(reactBody.userId)
-            // } else if( reactBody.reactName == 'funny' ) {
-            //     blog.reacts.funny.push(reactBody.userId)
-            // } else if( reactBody.reactName == 'sad' ) {
-            //     blog.reacts.sad.push(reactBody.userId)
-            // } else if( reactBody.reactName == 'informative' ) {
-            //     blog.reacts.informative.push(reactBody.userId)
-            // }
-
-            /** this works fine! */
             blog.reacts[reactBody.reactName].push(reactBody.userId);
-
         }
 
         let updatedBlog = await blog.save();
