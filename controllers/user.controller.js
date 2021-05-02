@@ -8,6 +8,7 @@ const utils = require('../util');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const client = require('../helpers/jwt.helper');
+const fs = require('fs')
 
 const registerUser = async(req, res, next) => {
     try {
@@ -68,9 +69,19 @@ const editUser = async(req, res, next) => {
     try {
 
         let userBody = req.body;
+        if( req.file ) {
+            userBody.img = req.file.path;
+        }
+
+        const oldImage = await userService.findUniqueUser({_id: userBody.userId}, ['img']);
+        
         await userService.updateUser(userBody);
-        const updatedUser = await userService.findUniqueUser({_id: userBody.userId}, ['_id', 'first_name', 'role'])
-        // const user = utils.makeObjectSelected(userBody, ['_id', 'first_name', 'role']);
+        
+        const updatedUser = await userService.findUniqueUser({_id: userBody.userId}, ['_id', 'first_name', 'role']);
+        
+        if (req.file && fs.existsSync(oldImage.img)) {
+            await fs.unlinkSync(oldImage.img);
+          }
         res.send(updatedUser);
 
     } catch (error) {
@@ -106,7 +117,7 @@ const getMyData = async(req, res, next) => {
         
         const userId = req.body.userId;
         let searchParams = { _id: userId };
-        let selectFields = 'first_name last_name joined role email job address about'
+        let selectFields = 'first_name last_name joined role email job address about img'
 
         const user = await userService.findUniqueUser(searchParams, selectFields);
 

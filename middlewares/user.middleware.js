@@ -8,7 +8,6 @@ const {
 // middlewares
 const validateUserEditReq = async(req, res, next) => {
     try {
-        
        await userSchema.validateAsync(req.body);
         next();
 

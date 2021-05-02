@@ -47,7 +47,6 @@ const updateUser = async(userBody) => {
         
         const userId = userBody.userId;
         const updateBody = utils.makeObjectExcept(userBody, ['userId']);
-        // const updatedUser = await User.findOneAndUpdate({ _id: userId }, updateBody);
         const updatedUser = await User.updateOne({ _id: userId }, updateBody);
 
         return Promise.resolve(updatedUser);
