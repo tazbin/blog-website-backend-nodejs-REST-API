@@ -10,6 +10,11 @@ const createBlog = async(req, res, next) => {
     try {
         
         let blogBody = req.body;
+
+        if( req.file ) {
+            blogBody.img = req.file.path;
+        }
+
         blogBody.writter = req.body.userId;
 
         const savedblog = await blogService.createBlog(blogBody)
@@ -24,7 +29,7 @@ const getBlogs = async(req, res, next) => {
     try {
 
         let searchParams = {};
-        let selectFields = 'posted title';
+        let selectFields = 'posted title img';
         let perPage = itemsPerPage;
         let page = req.query.page && req.query.page > 0 ? req.query.page-1 : 0;
 
@@ -52,7 +57,7 @@ const getBloggerBlogs = async(req, res, next) => {
 
         const userId = req.params.bloggerId;
         let searchParams = {writter: userId};
-        let selectFields = 'posted title';
+        let selectFields = 'posted title img';
         let perPage = itemsPerPage;
         let page = req.query.page && req.query.page > 0 ? req.query.page-1 : 0;
 
@@ -85,7 +90,7 @@ const getBlogsByCategory = async(req, res, next) => {
         } else {
             searchParams = {category: categoryId};
         }
-        let selectFields = 'posted title';
+        let selectFields = 'posted title img';
         let perPage = itemsPerPage;
         let page = req.query.page && req.query.page > 0 ? req.query.page-1 : 0;
 

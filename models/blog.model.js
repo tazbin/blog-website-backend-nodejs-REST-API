@@ -14,6 +14,10 @@ const BlogSchema = new Schema({
         type: String,
         required: true
     },
+    img: {
+        type: String,
+        default: ""
+    },
     posted: {
         type: String,
         default: utils.getCurretDate()

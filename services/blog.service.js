@@ -37,7 +37,7 @@ const readBlogs = async(
         .skip(perPage * page)
         .populate('writter', 'first_name last_name joined')
         .populate('category', 'name')
-        .populate('comments.people', 'first_name last_name')
+        .populate('comments.people', 'first_name last_name img')
         .select(selectFields);
         return Promise.resolve(blogs);
 

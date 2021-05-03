@@ -42,7 +42,7 @@ const loginUser = async(req, res, next) => {
         const passMatch = await bcrypt.compare(userBody.password, findUser.password);
 
         if( !passMatch ) {
-            throw createErrors.Unauthorized('Incorrect email or password');
+            throw createErrors.BadRequest('Incorrect email or password');
         }
 
         const accessToken = await jwtHelper.signAccessToken(findUser._id);
@@ -58,7 +58,7 @@ const loginUser = async(req, res, next) => {
 
     } catch (error) {
         if( error.status && error.status == 404 ) {
-            error = createErrors.Unauthorized('Incorrect email or password');
+            error = createErrors.BadRequest('Incorrect email or password');
             next(error);
         }
         next(error);
