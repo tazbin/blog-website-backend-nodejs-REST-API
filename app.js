@@ -8,7 +8,7 @@ const blogRoute = require('./routes/blog.route');
 const cors = require('cors');
 
 require('dotenv').config();
-require('./helpers/mongoDB.helper');
+require('./helpers/mongodb.helper');
 
 // constants
 const app = express();
