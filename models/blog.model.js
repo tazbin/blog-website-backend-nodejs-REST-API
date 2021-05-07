@@ -16,7 +16,7 @@ const BlogSchema = new Schema({
     },
     img: {
         type: String,
-        default: ""
+        default: 'uploads/blogs/default.jpg'
     },
     posted: {
         type: String,

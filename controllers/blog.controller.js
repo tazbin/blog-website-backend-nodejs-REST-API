@@ -3,6 +3,7 @@ const express = require('express');
 const createErrors = require('http-errors');
 const blogService = require('../services/blog.service');
 const { Blog } = require('../models/blog.model');
+const utils = require('../util');
 
 const itemsPerPage = 3;
 
@@ -35,8 +36,11 @@ const getBlogs = async(req, res, next) => {
 
         
         const numBlogs = await blogService.countBlogs(searchParams);
-        const blogs = await blogService.readBlogs(searchParams, selectFields, perPage, page);
+        let blogs = await blogService.readBlogs(searchParams, selectFields, perPage, page);
         
+        blogs.forEach(b => {
+            b.img = utils.makeImageUrl(req, b.img)
+        });
         let totalPages = Math.ceil(numBlogs / perPage);
         let currentPage = page+1;
 
@@ -63,8 +67,11 @@ const getBloggerBlogs = async(req, res, next) => {
 
         
         const numBlogs = await blogService.countBlogs(searchParams);
-        const blogs = await blogService.readBlogs(searchParams, selectFields, perPage, page);
+        let blogs = await blogService.readBlogs(searchParams, selectFields, perPage, page);
         
+        blogs.forEach(b => {
+            b.img = utils.makeImageUrl(req, b.img)
+        });
         let totalPages = Math.ceil(numBlogs / perPage);
         let currentPage = page+1;
 
@@ -95,8 +102,11 @@ const getBlogsByCategory = async(req, res, next) => {
         let page = req.query.page && req.query.page > 0 ? req.query.page-1 : 0;
 
         const numBlogs = await blogService.countBlogs(searchParams);
-        const blogs = await blogService.readBlogs(searchParams, selectFields, perPage, page);
+        let blogs = await blogService.readBlogs(searchParams, selectFields, perPage, page);
         
+        blogs.forEach(b => {
+            b.img = utils.makeImageUrl(req, b.img)
+        });
         let totalPages = Math.ceil(numBlogs / perPage);
         let currentPage = page+1;
 
@@ -120,7 +130,15 @@ const getSingleBlog = async(req, res, next) => {
         let blog = await blogService.readBlogs(searchParams, selectFields);
 
         blog = blog[0];
+        if( !blog ) {
+            throw createErrors.NotFound('No blog found with this blog id');
+        }
 
+        blog.img = utils.makeImageUrl(req, blog.img);
+        // blog.comments.map(c => {
+        //     c.people.img = 'http://localhost:3000/' + c.people.img;
+        //     return c.people.img
+        //     });
         res.send(blog);
 
     } catch (error) {
@@ -162,7 +180,7 @@ const commentToBlog = async(req, res, next) => {
         }
         blog = blog[0];
 
-        const updatedBlog = await blogService.postComment(blog, commentBody);
+        let updatedBlog = await blogService.postComment(blog, commentBody);
         res.send(updatedBlog);
 
     } catch (error) {

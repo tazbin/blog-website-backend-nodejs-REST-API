@@ -6,7 +6,8 @@ const { Schema } = mongoose;
 // shcema definition
 const userSchema = new Schema({
     img: {
-        type: String
+        type: String,
+        default: 'uploads/default.png'
     },
     email:{
         type: String,
@@ -28,7 +29,8 @@ const userSchema = new Schema({
     },
     job: {
         type: String,
-        require: false
+        require: false,
+        default: ''
     },
     joined: {
         type: String,
@@ -36,11 +38,13 @@ const userSchema = new Schema({
     },
     address: {
         type: String,
-        require: false
+        require: false,
+        default: ''
     },
     about: {
         type: String,
-        require: false
+        require: false,
+        default: ''
     },
     password: {
         type: String,

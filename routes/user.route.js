@@ -24,7 +24,6 @@ var storage = multer.diskStorage({
 });
 
 const fileFilter = (req, file, cb) => {
-
     if( file.mimetype != 'image/jpeg' && file.mimetype != 'image/png' ) {
         cb(null, false);
         cb(createErrors.BadRequest("File type must be of jpg, jpeg or png!"));

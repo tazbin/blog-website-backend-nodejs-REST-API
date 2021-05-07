@@ -107,7 +107,7 @@ const postComment = async(blog, commentBody) => {
 
         let updatedBlog = await blog.save();
         updatedBlog = await updatedBlog
-        .populate('comments.people', 'first_name last_name')
+        .populate('comments.people', 'first_name last_name img')
         .execPopulate();
 
         return Promise.resolve(updatedBlog);

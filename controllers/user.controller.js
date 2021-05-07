@@ -8,7 +8,7 @@ const utils = require('../util');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const client = require('../helpers/jwt.helper');
-const fs = require('fs')
+const fs = require('fs');
 
 const registerUser = async(req, res, next) => {
     try {
@@ -79,7 +79,7 @@ const editUser = async(req, res, next) => {
         
         const updatedUser = await userService.findUniqueUser({_id: userBody.userId}, ['_id', 'first_name', 'role']);
         
-        if (req.file && fs.existsSync(oldImage.img)) {
+        if (req.file && fs.existsSync(oldImage.img) && !oldImage.img.includes('default')) {
             await fs.unlinkSync(oldImage.img);
           }
         res.send(updatedUser);
@@ -120,6 +120,7 @@ const getMyData = async(req, res, next) => {
         let selectFields = 'first_name last_name joined role email job address about img'
 
         const user = await userService.findUniqueUser(searchParams, selectFields);
+        user.img = utils.makeImageUrl(req, user.img);
 
         res.send(user);
 
@@ -130,16 +131,17 @@ const getMyData = async(req, res, next) => {
 
 const getBloggerProfile = async(req, res, next) => {
     try {
-        
+
         const userId = req.params.bloggerId;
         if( !userId ) {
             throw createErrors.BadRequest('No bloggerId');
         }
 
         let searchParams = { _id: userId };
-        let selectFields = 'img first_name last_name joined role email job address about'
+        let selectFields = 'img first_name last_name joined role email job address about';
 
         const user = await userService.findUniqueUser(searchParams, selectFields);
+        user.img = utils.makeImageUrl(req, user.img);
         res.send(user);
 
     } catch (error) {
