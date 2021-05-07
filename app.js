@@ -22,6 +22,9 @@ app.use(cors({
   }));
 
 // routes
+app.get('/', (req, res) => {
+    res.send('Hello heroku');
+});
 
 app.use('/user', userRoute);
 app.use('/category', categoryRoute);

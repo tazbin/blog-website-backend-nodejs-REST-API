@@ -4,7 +4,7 @@
   "description": "This is the backend of a blog app",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app"
+    "start": "node app.js"
   },
   "author": "Tazbinur",
   "license": "ISC",
