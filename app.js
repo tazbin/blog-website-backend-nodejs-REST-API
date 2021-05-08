@@ -37,6 +37,9 @@ app.use(async(req, res, next) => {
 
 // handle errors
 app.use((err, req, res, next) => {
+    if (err.code === 'LIMIT_FILE_SIZE') {
+        err.status = 400;
+    }
     res.status(err.status || 500);
     res.send({
         error: {
