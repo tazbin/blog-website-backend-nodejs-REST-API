@@ -27,7 +27,10 @@ const fileFilter = (req, file, cb) => {
     if( file.mimetype != 'image/jpeg' && file.mimetype != 'image/png' ) {
         cb(null, false);
         cb(createErrors.BadRequest("File type must be of jpg, jpeg or png!"));
-    } else if( !req.body.email ) {
+    } else if( file.size > 1024*1024*1 ) {
+        cb(null, false);
+        cb(createErrors.BadRequest("Profile image must not be larger then 1MB"));
+    }  else if( !req.body.email ) {
         cb(null, false);
         cb(createErrors.BadRequest("Email must not be empty!"));
     } else if( !req.body.first_name ) {
@@ -43,9 +46,9 @@ const fileFilter = (req, file, cb) => {
 
 var upload = multer({ 
     storage: storage, 
-    limits: {
-        fileSize: 1024*1024*1
-    },
+    // limits: {
+    //     fileSize: 1024*1024*1
+    // },
     fileFilter: fileFilter
 });
 
