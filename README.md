@@ -1,7 +1,4 @@
 # blog-website-backend-nodejs-REST-API
-![alt text][logo]
-
-[logo]: docs/show.PNG "Frontend UI"
 
 **blog-website** is one of my personal projects where registered bloggers write blogs. Bloggers can also comment or react to blogs. This repository holds the code of it's backend which is a **RESTful API**.
 
