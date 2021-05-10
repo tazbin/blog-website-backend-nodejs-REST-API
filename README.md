@@ -7,7 +7,7 @@
 
 <em> The frontend of this project can be found [here (Angular)](https://github.com/tazbin/blog-website-frontend_Angular) </em>
 
-<em> Visit complete live project [lets-blog.netlify.app/all_blogs](https://lets-blog.netlify.app/all_blogs) </em>
+<em> Visit complete live project [lets-blog.netlify.app/all_blogs](https://lets-blog.netlify.app/all_blogs) </em> 
 
 ## Features:
 - bloggers can create their profiles (token-based authentication)
