@@ -1,5 +1,5 @@
 ## Get details of a blog
-To get details content of a particular blog
+To get detailed content of a particular blog
 
 **URL**: `localhost:3000/blog/:blogId`
 
@@ -25,62 +25,54 @@ To get details content of a particular blog
 {
     "reacts": {
         "like": [
-            "6069c94d7f65a454540d1384"
+            "609655be3bfe280015a45d04",
+            "609656cc3bfe280015a45d07"
         ],
-        "love": [
-            "606efbba17e43a04cce0286d"
-        ],
+        "love": [],
         "funny": [],
         "sad": [],
         "informative": []
     },
-    "posted": "08 Apr 2021",
-    "_id": "606f2b0e17586e3480477137",
-    "title": "my first blog",
+    "img": "http://localhost:3000/uploads\\blogs\\1620377310963.png",
+    "posted": "07 May 2021",
+    "_id": "6094fede8c2e3c15b4d3cba7",
+    "title": "Designing a cover photo with MS PowerPoint",
     "category": {
-        "_id": "6069c9807f65a454540d1386",
-        "name": "tech"
+        "_id": "6094fb9a8c2e3c15b4d3cba2",
+        "name": "skill development"
     },
-    "body": "This is my demo blog...",
+    "body": "Lorem Ipsum is simply dummy text ...",
     "writter": {
-        "joined": "08 Apr 2021",
-        "_id": "606efbba17e43a04cce0286d",
+        "joined": "07 May 2021",
+        "_id": "6094fafc8c2e3c15b4d3cb9d",
         "first_name": "Tazbinur",
         "last_name": "Rahaman"
     },
     "comments": [
         {
-            "time": "09 Apr 2021",
-            "_id": "606fef54a49e5c4958dc14da",
+            "time": "08 May 2021",
+            "_id": "6096562d3bfe280015a45d05",
             "people": {
-                "_id": "606efbba17e43a04cce0286d",
-                "first_name": "Tazbinur",
-                "last_name": "Rahaman"
+                "img": "uploads/1620654288692.jpg",
+                "_id": "609655be3bfe280015a45d04",
+                "first_name": "Imtiaz",
+                "last_name": "Ahmed"
             },
-            "body": "Hey, nice blog"
+            "body": "Wow! I didn't know MS powerpoint can do that much things!"
         },
         {
-            "time": "09 Apr 2021",
-            "_id": "606fef64a49e5c4958dc14db",
+            "time": "08 May 2021",
+            "_id": "609657a43bfe280015a45d08",
             "people": {
-                "_id": "606efbba17e43a04cce0286d",
-                "first_name": "Tazbinur",
-                "last_name": "Rahaman"
+                "img": "uploads/1620654239923.jpg",
+                "_id": "609656cc3bfe280015a45d07",
+                "first_name": "Rakibul",
+                "last_name": "Islam"
             },
-            "body": "I leanrd many things from this blog"
-        },
-        {
-            "time": "09 Apr 2021",
-            "_id": "6070505278eced1bf44df340",
-            "people": {
-                "_id": "606ff3cba49e5c4958dc14dc",
-                "first_name": "Khalid",
-                "last_name": "Syfullah"
-            },
-            "body": "Kemon achis bhai?"
+            "body": "Thanks for sharing, very informative..."
         }
     ],
-    "__v": 181
+    "__v": 8
 }
 ```
 
