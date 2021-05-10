@@ -1,5 +1,5 @@
 ## Get list of All blogs with pagination
-To get the list of all blogs with information & with pagination. 3 blogs each page.
+To get the list of all blogs with information & with pagination. 6 blogs each page.
 
 **URL**: `localhost:3000/blog?page=:pageNumber`
 
@@ -25,106 +25,60 @@ To get the list of all blogs with information & with pagination. 3 blogs each pa
 {
     "result": [
         {
-            "posted": "08 Apr 2021",
-            "_id": "606f2b0e17586e3480477137",
-            "title": "my first blog",
+            "img": "http://localhost:3000/uploads\\blogs\\1620377310963.png",
+            "posted": "07 May 2021",
+            "_id": "6094fede8c2e3c15b4d3cba7",
+            "title": "Designing a cover photo with MS PowerPoint",
             "category": {
-                "_id": "6069c9807f65a454540d1386",
-                "name": "tech"
+                "_id": "6094fb9a8c2e3c15b4d3cba2",
+                "name": "skill development"
             },
             "writter": {
-                "joined": "08 Apr 2021",
-                "_id": "606efbba17e43a04cce0286d",
+                "joined": "07 May 2021",
+                "_id": "6094fafc8c2e3c15b4d3cb9d",
                 "first_name": "Tazbinur",
                 "last_name": "Rahaman"
             },
             "comments": [
                 {
                     "people": {
-                        "_id": "606efbba17e43a04cce0286d",
-                        "first_name": "Tazbinur",
-                        "last_name": "Rahaman"
+                        "img": "uploads/1620654288692.jpg",
+                        "_id": "609655be3bfe280015a45d04",
+                        "first_name": "Imtiaz",
+                        "last_name": "Ahmed"
                     }
                 },
                 {
                     "people": {
-                        "_id": "606efbba17e43a04cce0286d",
-                        "first_name": "Tazbinur",
-                        "last_name": "Rahaman"
-                    }
-                },
-                {
-                    "people": {
-                        "_id": "606ff3cba49e5c4958dc14dc",
-                        "first_name": "Khalid",
-                        "last_name": "Syfullah"
-                    }
-                },
-                {
-                    "people": {
-                        "_id": "606ff3cba49e5c4958dc14dc",
-                        "first_name": "Khalid",
-                        "last_name": "Syfullah"
-                    }
-                },
-                {
-                    "people": {
-                        "_id": "606ff3cba49e5c4958dc14dc",
-                        "first_name": "Khalid",
-                        "last_name": "Syfullah"
-                    }
-                },
-                {
-                    "people": {
-                        "_id": "606efbba17e43a04cce0286d",
-                        "first_name": "Tazbinur",
-                        "last_name": "Rahaman"
-                    }
-                },
-                {
-                    "people": {
-                        "_id": "606efbba17e43a04cce0286d",
-                        "first_name": "Tazbinur",
-                        "last_name": "Rahaman"
+                        "img": "uploads/1620654239923.jpg",
+                        "_id": "609656cc3bfe280015a45d07",
+                        "first_name": "Rakibul",
+                        "last_name": "Islam"
                     }
                 }
             ]
         },
+        ...
         {
-            "posted": "08 Apr 2021",
-            "_id": "606f2b1e17586e3480477138",
-            "title": "my second blog",
+            "img": "http://localhost:3000/uploads\\blogs\\1620377835812.jpg",
+            "posted": "07 May 2021",
+            "_id": "609500eb8c2e3c15b4d3cbac",
+            "title": "RUET ECE16 series landed to their final year of graduation",
             "category": {
-                "_id": "6069c9807f65a454540d1386",
-                "name": "tech"
+                "_id": "6094fb8f8c2e3c15b4d3cba1",
+                "name": "motivational"
             },
             "writter": {
-                "joined": "08 Apr 2021",
-                "_id": "606efbba17e43a04cce0286d",
-                "first_name": "Tazbinur",
-                "last_name": "Rahaman"
-            },
-            "comments": []
-        },
-        {
-            "posted": "08 Apr 2021",
-            "_id": "606f2b2317586e3480477139",
-            "title": "my third blog",
-            "category": {
-                "_id": "6069c9807f65a454540d1386",
-                "name": "tech"
-            },
-            "writter": {
-                "joined": "08 Apr 2021",
-                "_id": "606efbba17e43a04cce0286d",
+                "joined": "07 May 2021",
+                "_id": "6094fafc8c2e3c15b4d3cb9d",
                 "first_name": "Tazbinur",
                 "last_name": "Rahaman"
             },
             "comments": []
         }
     ],
-    "totalBlogs": 24,
-    "totalPages": 8,
+    "totalBlogs": 7,
+    "totalPages": 2,
     "currentPage": 1
 }
 ```
