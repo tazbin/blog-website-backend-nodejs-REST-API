@@ -1,5 +1,5 @@
 ## Get blogs of a category
-To get list of blogs of a particular category with information & pagination. 3 blogs in each page.
+To get list of blogs of a particular category with information & pagination. 6 blogs in each page.
 
 **URL**: `localhost:3000/blog/category/:categoryId?page=:pageNumber`
 
@@ -25,106 +25,52 @@ To get list of blogs of a particular category with information & pagination. 3 b
 {
     "result": [
         {
-            "posted": "08 Apr 2021",
-            "_id": "606f2b0e17586e3480477137",
-            "title": "my first blog",
+            "img": "http://localhost:3000/uploads\\blogs\\1620377411846.jpg",
+            "posted": "07 May 2021",
+            "_id": "6094ff438c2e3c15b4d3cba8",
+            "title": "Travelling tips with budget money",
             "category": {
-                "_id": "6069c9807f65a454540d1386",
-                "name": "tech"
+                "_id": "6094fb838c2e3c15b4d3cba0",
+                "name": "tours & travels"
             },
             "writter": {
-                "joined": "08 Apr 2021",
-                "_id": "606efbba17e43a04cce0286d",
+                "joined": "07 May 2021",
+                "_id": "6094fafc8c2e3c15b4d3cb9d",
                 "first_name": "Tazbinur",
                 "last_name": "Rahaman"
             },
             "comments": [
                 {
                     "people": {
-                        "_id": "606efbba17e43a04cce0286d",
-                        "first_name": "Tazbinur",
-                        "last_name": "Rahaman"
-                    }
-                },
-                {
-                    "people": {
-                        "_id": "606efbba17e43a04cce0286d",
-                        "first_name": "Tazbinur",
-                        "last_name": "Rahaman"
-                    }
-                },
-                {
-                    "people": {
-                        "_id": "606ff3cba49e5c4958dc14dc",
-                        "first_name": "Khalid",
-                        "last_name": "Syfullah"
-                    }
-                },
-                {
-                    "people": {
-                        "_id": "606ff3cba49e5c4958dc14dc",
-                        "first_name": "Khalid",
-                        "last_name": "Syfullah"
-                    }
-                },
-                {
-                    "people": {
-                        "_id": "606ff3cba49e5c4958dc14dc",
-                        "first_name": "Khalid",
-                        "last_name": "Syfullah"
-                    }
-                },
-                {
-                    "people": {
-                        "_id": "606efbba17e43a04cce0286d",
-                        "first_name": "Tazbinur",
-                        "last_name": "Rahaman"
-                    }
-                },
-                {
-                    "people": {
-                        "_id": "606efbba17e43a04cce0286d",
-                        "first_name": "Tazbinur",
-                        "last_name": "Rahaman"
+                        "img": "uploads/1620654239923.jpg",
+                        "_id": "609656cc3bfe280015a45d07",
+                        "first_name": "Rakibul",
+                        "last_name": "Islam"
                     }
                 }
             ]
         },
+        ...
         {
-            "posted": "08 Apr 2021",
-            "_id": "606f2b1e17586e3480477138",
-            "title": "my second blog",
+            "img": "http://localhost:3000/uploads/blogs/1620654888979.jpg",
+            "posted": "10 May 2021",
+            "_id": "60993b2e48e2930015410235",
+            "title": "Gramer bari te shorisha ful er bagan e ekdin",
             "category": {
-                "_id": "6069c9807f65a454540d1386",
-                "name": "tech"
+                "_id": "6094fb838c2e3c15b4d3cba0",
+                "name": "tours & travels"
             },
             "writter": {
-                "joined": "08 Apr 2021",
-                "_id": "606efbba17e43a04cce0286d",
-                "first_name": "Tazbinur",
-                "last_name": "Rahaman"
-            },
-            "comments": []
-        },
-        {
-            "posted": "08 Apr 2021",
-            "_id": "606f2b2317586e3480477139",
-            "title": "my third blog",
-            "category": {
-                "_id": "6069c9807f65a454540d1386",
-                "name": "tech"
-            },
-            "writter": {
-                "joined": "08 Apr 2021",
-                "_id": "606efbba17e43a04cce0286d",
-                "first_name": "Tazbinur",
-                "last_name": "Rahaman"
+                "joined": "08 May 2021",
+                "_id": "609656cc3bfe280015a45d07",
+                "first_name": "Rakibul",
+                "last_name": "Islam"
             },
             "comments": []
         }
     ],
-    "totalBlogs": 7,
-    "totalPages": 3,
+    "totalBlogs": 3,
+    "totalPages": 1,
     "currentPage": 1
 }
 ```
