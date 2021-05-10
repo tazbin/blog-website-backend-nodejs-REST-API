@@ -1,8 +1,13 @@
-# blog-website-backend_REST_API
+# blog-website-backend-nodejs-REST-API
+![alt text][logo]
+
+[logo]: docs/show.PNG "Frontend UI"
 
 **blog-website** is one of my personal projects where registered bloggers write blogs. Bloggers can also comment or react to blogs. This repository holds the code of it's backend which is a **RESTful API**.
 
-<em> The frontend of this project can be found [here (REST API)](https://github.com/tazbin/blog-website-frontend_Angular). </em>
+<em> The frontend of this project can be found [here (Angular)](https://github.com/tazbin/blog-website-frontend_Angular) </em>
+
+<em> Visit complete live project [lets-blog.netlify.app/all_blogs](https://lets-blog.netlify.app/all_blogs) </em>
 
 ## Features:
 - bloggers can create their profiles (token-based authentication)
