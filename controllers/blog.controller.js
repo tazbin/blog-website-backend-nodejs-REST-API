@@ -5,7 +5,7 @@ const blogService = require('../services/blog.service');
 const { Blog } = require('../models/blog.model');
 const utils = require('../util');
 
-const itemsPerPage = 2;
+const itemsPerPage = 6;
 
 const createBlog = async(req, res, next) => {
     try {
