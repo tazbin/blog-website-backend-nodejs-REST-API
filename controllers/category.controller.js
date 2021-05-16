@@ -34,13 +34,20 @@ const getCategorizedBlogCount = async(req, res, next) => {
     try {
 
         let searchParams = {};
-        let categories = await categoryService.readCategory(searchParams);
+
+        let bloggerId = req.params.bloggerId;
+        if( bloggerId && bloggerId.toLowerCase() != 'all' ) {
+            searchParams.writter = bloggerId;
+        }
+
+        let categories = await categoryService.readCategory();
 
         let count = [];
 
         categories.forEach(c => {
+            searchParams.category = c._id;
             count.push(
-                blogService.countBlogs({category: c._id})
+                blogService.countBlogs(searchParams)
             );
         });
 

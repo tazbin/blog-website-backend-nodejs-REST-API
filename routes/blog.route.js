@@ -50,15 +50,9 @@ const router = express.Router();
 
 // route: blog/
 
-router.post('/', 
-verifyAccessToken, 
-upload.single('img'),
-verifyAccessToken, 
-blogCtrl.createBlog);
-router.get('/', blogCtrl.getBlogs);
-router.get('/blogger/:bloggerId', blogCtrl.getBloggerBlogs);
-router.get('/:blogId', blogCtrl.getSingleBlog);
-router.get('/category/:categoryId', blogCtrl.getBlogsByCategory);
+router.post('/', verifyAccessToken, upload.single('img'), verifyAccessToken, blogCtrl.createBlog);
+router.get('/details/:blogId', blogCtrl.getSingleBlog);
+router.get('/:bloggerId?/:categoryId?', blogCtrl.getBlogList);
 router.put('/react', verifyAccessToken, blogCtrl.reactToBlog);
 router.post('/comment', verifyAccessToken, blogCtrl.commentToBlog);
 router.delete('/comment', verifyAccessToken, blogCtrl.deleteComment);

@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.post('/', categoryCtrl.createCategory);
 router.get('/', categoryCtrl.getCategories);
-router.get('/categorizedBlogs', categoryCtrl.getCategorizedBlogCount);
+router.get('/categorizedBlogs/:bloggerId?', categoryCtrl.getCategorizedBlogCount);
 
 
 // exports

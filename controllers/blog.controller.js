@@ -5,7 +5,7 @@ const blogService = require('../services/blog.service');
 const { Blog } = require('../models/blog.model');
 const utils = require('../util');
 
-const itemsPerPage = 6;
+const itemsPerPage = 2;
 
 const createBlog = async(req, res, next) => {
     try {
@@ -26,81 +26,25 @@ const createBlog = async(req, res, next) => {
     }
 }
 
-const getBlogs = async(req, res, next) => {
+const getBlogList = async(req, res, next) => {
     try {
+
+        const bloggerId = req.params.bloggerId;
+        const categoryId = req.params.categoryId;
 
         let searchParams = {};
-        let selectFields = 'posted title img';
-        let perPage = itemsPerPage;
-        let page = req.query.page && req.query.page > 0 ? req.query.page-1 : 0;
-
-        
-        const numBlogs = await blogService.countBlogs(searchParams);
-        let blogs = await blogService.readBlogs(searchParams, selectFields, perPage, page);
-        
-        blogs.forEach(b => {
-            b.img = utils.makeImageUrl(req, b.img)
-        });
-        let totalPages = Math.ceil(numBlogs / perPage);
-        let currentPage = page+1;
-
-        res.send({
-            result: blogs, 
-            totalBlogs: numBlogs,
-            totalPages: totalPages,
-            currentPage: currentPage
-        });
-
-    } catch (error) {
-        next(error);
-    }
-}
-
-const getBloggerBlogs = async(req, res, next) => {
-    try {
-
-        const userId = req.params.bloggerId;
-        let searchParams = {writter: userId};
-        let selectFields = 'posted title img';
-        let perPage = itemsPerPage;
-        let page = req.query.page && req.query.page > 0 ? req.query.page-1 : 0;
-
-        
-        const numBlogs = await blogService.countBlogs(searchParams);
-        let blogs = await blogService.readBlogs(searchParams, selectFields, perPage, page);
-        
-        blogs.forEach(b => {
-            b.img = utils.makeImageUrl(req, b.img)
-        });
-        let totalPages = Math.ceil(numBlogs / perPage);
-        let currentPage = page+1;
-
-        res.send({
-            result: blogs, 
-            totalBlogs: numBlogs,
-            totalPages: totalPages,
-            currentPage: currentPage
-        });
-
-    } catch (error) {
-        next(error);
-    }
-}
-
-const getBlogsByCategory = async(req, res, next) => {
-    try {
-
-        const categoryId = req.params.categoryId;
-        let searchParams;
-        if( categoryId == 'all' ) {
-            searchParams = {};
-        } else {
-            searchParams = {category: categoryId};
+        if( bloggerId && bloggerId.toLowerCase() != 'all' ) {
+            searchParams.writter = bloggerId;
         }
+        if( categoryId && categoryId.toLowerCase() != 'all' ) {
+            searchParams.category = categoryId
+        }
+
         let selectFields = 'posted title img';
         let perPage = itemsPerPage;
         let page = req.query.page && req.query.page > 0 ? req.query.page-1 : 0;
 
+        
         const numBlogs = await blogService.countBlogs(searchParams);
         let blogs = await blogService.readBlogs(searchParams, selectFields, perPage, page);
         
@@ -212,9 +156,7 @@ const deleteComment = async(req, res, next) => {
  // exports
  module.exports = {
     createBlog,
-    getBlogs,
-    getBloggerBlogs,
-    getBlogsByCategory,
+    getBlogList,
     getSingleBlog,
     reactToBlog,
     commentToBlog,

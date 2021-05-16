@@ -21,11 +21,11 @@ const { Category } = require('../models/category.model');
     }
 }
 
-const readCategory = async(searchParams) => {
+const readCategory = async() => {
     try {
 
         const categories = await Category
-        .find(searchParams)
+        .find()
         .select('name');
         return Promise.resolve(categories);
 
