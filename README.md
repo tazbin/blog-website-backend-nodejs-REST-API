@@ -93,8 +93,7 @@ Press CTRL + C to stop the server.
 
 ### Blog related
 - [ ] [Create a new blog](docs/blog/createBlog.md): `POST localhost:3000/blog`
-- [ ] [Get list of all blogs with pagination](docs/blog/getLIstofAllBlogsWithPagination.md): `GET localhost:3000/blog?page=:pageNumber`
-- [ ] [Get list of all blogs of a blogger](docs/blog/getAllBlogsOfBlogger.md): `GET localhost:3000/blog/blogger/:bloggerId?page=:pageNumber`
+- [ ] [Get list of all blogs with pagination of certain category of a user](docs/blog/getLIstofAllBlogsWithPagination.md): `GET localhost:3000/blog/:bloggerId?/:categoryId?`
 - [ ] [Get details of a blog](docs/blog/getDetailsOfBlog.md): `GET localhost:3000/blog/:blogId`
 - [ ] [Get list of all blogs of a selected category](docs/blog/getBlogsOfSelectedCategory.md): `GET localhost:3000/blog/category/:categoryId`
 - [x] [React to a blog](docs/blog/reactToBlog.md): `PUT localhost:3000/blog/react`
