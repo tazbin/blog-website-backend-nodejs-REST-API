@@ -89,7 +89,7 @@ Press CTRL + C to stop the server.
 ### Category related
 - [x] [Create a new category](docs/category/createCategory.md): `POST localhost:3000/category`
 - [ ] [Get list of all categories](docs/category/getListOfCategories.md): `GET localhost:3000/category`
-- [ ] [Get list of all categories & blog counts](docs/category/getListOfCategoriezedBlogs.md): `GET localhost:3000/category/categorizedBlogs`
+- [ ] [Get list of all categorized blog counts of user](docs/category/getListOfCategoriezedBlogs.md): `GET localhost:3000/category/categorizedBlogs/:bloggerId`
 
 ### Blog related
 - [ ] [Create a new blog](docs/blog/createBlog.md): `POST localhost:3000/blog`

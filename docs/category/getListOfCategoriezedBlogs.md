@@ -1,14 +1,14 @@
-## Get list of all categories & blog count
-To get a list of all categories & number of blogs of each category
+## Get list of all categorized blog counts of user
+To get a list of all categories & number of blogs of each category of  a user
 
-**URL**: `localhost:3000/category`
+**URL**: `GET localhost:3000/category/categorizedBlogs/:bloggerId`
 
 **Method**: `GET`
 
 **Authentication**: Not required
 
 ## Request body
-**Required fields:**
+**Required fields:** `bloggerId` (query params)
 
 **Optional fields:**
 
@@ -47,7 +47,7 @@ To get a list of all categories & number of blogs of each category
 ```
 
 ## Error response
-**Condition**: 
+**Condition**:
 
 **Code**: 
 
