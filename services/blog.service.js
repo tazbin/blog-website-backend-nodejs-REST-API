@@ -59,7 +59,7 @@ const countBlogs = async(countParams) => {
 
     } catch (error) {
         if( error.name == 'CastError' ) {
-            error = createErrors.BadRequest('Invalied categoryId');
+            error = createErrors.BadRequest('Invalied objectId');
         }
         return Promise.reject(error);
     }
