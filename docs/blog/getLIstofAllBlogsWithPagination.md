@@ -1,5 +1,5 @@
-## Get list of All blogs with pagination
-To get the list of all blogs with information & with pagination. 6 blogs each page. This 
+## Get list of all blogs with pagination of certain category of a user
+To get the list of all blogs of certain category of a user with information & with pagination. 6 blogs each page. BloggerId & categoryId both set to `all` returns all the blogs of all categories. 
 
 **URL**: `localhost:3000/blog/:bloggerId?/:categoryId?`
 
