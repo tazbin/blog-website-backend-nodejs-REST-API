@@ -1,16 +1,16 @@
 ## Get list of All blogs with pagination
-To get the list of all blogs with information & with pagination. 6 blogs each page.
+To get the list of all blogs with information & with pagination. 6 blogs each page. This 
 
-**URL**: `localhost:3000/blog?page=:pageNumber`
+**URL**: `localhost:3000/blog/:bloggerId?/:categoryId?`
 
 **Method**: `GET`
 
 **Authentication**: Not required
 
 ## Request body
-**Required fields:**
+**Required fields:** `bloggerId`, `categoryId` (req params)
 
-**Optional fields:** `pageNumber` (query params: default is 1)
+**Optional fields:** `page` (query params: default is 1)
 
 **Data**:
 ```bash
