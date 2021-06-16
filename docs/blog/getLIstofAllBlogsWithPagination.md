@@ -84,11 +84,14 @@ To get the list of all blogs with information & with pagination. 6 blogs each pa
 ```
 
 ## Error response
-**Condition**: 
+**Condition**:  If bloggerId, CategoryId or both are invalied
 
-**Code**:
+**Code**: `400 Bad Request`
 
 **Content**:
 ```bash
-
+    "error": {
+        "status": 400,
+        "message": "Invalied Id provided"
+    }
 ```
