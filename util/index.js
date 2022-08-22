@@ -58,16 +58,10 @@ combineArrayObjectAndArray = (obj, objFields, array, arrayFieldName) => {
     return result;
 }
 
-makeImageUrl = (req, url) => {
-    const hostUrl = req.protocol+"://"+req.headers.host;
-    return hostUrl + '/' + url;
-}
-
 // exports
 module.exports = {
     getCurretDate,
     makeObjectSelected,
     makeObjectExcept,
-    combineArrayObjectAndArray,
-    makeImageUrl
+    combineArrayObjectAndArray
 }

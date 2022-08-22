@@ -4,6 +4,7 @@ const createErrors = require('http-errors');
 const blogService = require('../services/blog.service');
 const { Blog } = require('../models/blog.model');
 const utils = require('../util');
+const cloudinary = require('../helpers/cloudinary.helper');
 
 const itemsPerPage = 6;
 
@@ -14,6 +15,16 @@ const createBlog = async(req, res, next) => {
 
         if( req.file ) {
             blogBody.img = req.file.path;
+
+            const uploadResult = await cloudinary.uploader.upload(blogBody.img, {
+                folder: "blogs"
+            });
+    
+            if( uploadResult.secure_url ) {
+                blogBody.img = uploadResult.secure_url;
+            } else {
+                throw createErrors.Forbidden("Opps, image upload failed! Try again.")
+            }
         }
 
         blogBody.writter = req.body.userId;
@@ -48,9 +59,6 @@ const getBlogList = async(req, res, next) => {
         const numBlogs = await blogService.countBlogs(searchParams);
         let blogs = await blogService.readBlogs(searchParams, selectFields, perPage, page);
         
-        blogs.forEach(b => {
-            b.img = utils.makeImageUrl(req, b.img)
-        });
         let totalPages = Math.ceil(numBlogs / perPage);
         let currentPage = page+1;
 
@@ -78,11 +86,6 @@ const getSingleBlog = async(req, res, next) => {
             throw createErrors.NotFound('No blog found with this blog id');
         }
 
-        blog.img = utils.makeImageUrl(req, blog.img);
-        // blog.comments.map(c => {
-        //     c.people.img = 'http://localhost:3000/' + c.people.img;
-        //     return c.people.img
-        //     });
         res.send(blog);
 
     } catch (error) {

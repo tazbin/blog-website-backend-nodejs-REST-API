@@ -7,7 +7,7 @@ const { Schema } = mongoose;
 const userSchema = new Schema({
     img: {
         type: String,
-        default: 'uploads/default.png'
+        default: 'https://res.cloudinary.com/s4whf65/image/upload/v1661179042/avatars/vgj2dxxqucypsx7tkpfv.jpg'
     },
     email:{
         type: String,

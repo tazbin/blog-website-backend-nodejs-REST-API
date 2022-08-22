@@ -8,7 +8,7 @@ const utils = require('../util');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const client = require('../helpers/jwt.helper');
-const fs = require('fs');
+const cloudinary = require('../helpers/cloudinary.helper');
 
 const registerUser = async(req, res, next) => {
     try {
@@ -69,19 +69,25 @@ const editUser = async(req, res, next) => {
     try {
 
         let userBody = req.body;
+
         if( req.file ) {
             userBody.img = req.file.path;
+
+            const uploadResult = await cloudinary.uploader.upload(userBody.img, {
+                folder: "avatars"
+            });
+    
+            if( uploadResult.secure_url ) {
+                userBody.img = uploadResult.secure_url;
+            } else {
+                throw createErrors.Forbidden("Opps, image upload failed! Try again.")
+            }
         }
 
-        const oldImage = await userService.findUniqueUser({_id: userBody.userId}, ['img']);
-        
         await userService.updateUser(userBody);
         
         const updatedUser = await userService.findUniqueUser({_id: userBody.userId}, ['_id', 'first_name', 'role']);
         
-        if (req.file && fs.existsSync(oldImage.img) && !oldImage.img.includes('default')) {
-            await fs.unlinkSync(oldImage.img);
-          }
         res.send(updatedUser);
 
     } catch (error) {
@@ -120,7 +126,6 @@ const getMyData = async(req, res, next) => {
         let selectFields = 'first_name last_name joined role email job address about img'
 
         const user = await userService.findUniqueUser(searchParams, selectFields);
-        user.img = utils.makeImageUrl(req, user.img);
 
         res.send(user);
 
@@ -141,7 +146,6 @@ const getBloggerProfile = async(req, res, next) => {
         let selectFields = 'img first_name last_name joined role email job address about';
 
         const user = await userService.findUniqueUser(searchParams, selectFields);
-        user.img = utils.makeImageUrl(req, user.img);
         res.send(user);
 
     } catch (error) {
