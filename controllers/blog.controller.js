@@ -118,6 +118,10 @@ const commentToBlog = async(req, res, next) => {
     try {
 
         const commentBody = req.body;
+        if( commentBody.body.trim().length == 0 ) {
+            throw createErrors.BadRequest('Comment must not be empty!');
+        }
+
         const searchParams = { _id: commentBody.blogId };
         const selectFields = '';
 
