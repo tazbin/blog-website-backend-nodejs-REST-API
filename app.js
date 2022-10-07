@@ -7,12 +7,8 @@ const categoryRoute = require('./routes/category.route');
 const blogRoute = require('./routes/blog.route');
 const cors = require('cors');
 
-require('dotenv').config();
-require('./helpers/mongodb.helper');
-
 // constants
 const app = express();
-const PORT = process.env.PORT || 5000;
 
 app.use('/uploads', express.static('uploads'));
 app.use(express.json());
@@ -49,7 +45,5 @@ app.use((err, req, res, next) => {
     });
 });
 
-// start the server
-app.listen(PORT, () => {
-    console.log(`server running at port ${PORT}...`);
-});
+// exports
+module.exports = app;
