@@ -10,7 +10,7 @@
 
 - [Features](#features)
 - [Tech used](#tech-used)
-- [How get the project](#how-to-get-the-project) 
+- [How to get the project](#how-to-get-the-project) 
 - [Run the project using docker](#run-the-project-using-docker) 
 - [API endpoints](#api-endpoints) 
 
@@ -40,7 +40,7 @@
 **Containerization tool**
 - [x] Docker
 
-## How get the project:
+## How to get the project:
 #### Using Git (recommended)
 1. Navigate & open CLI into the directory where you want to put this project & Clone this project (will be cloned inside myProject folder) using this command.
    
