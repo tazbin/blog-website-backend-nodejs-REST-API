@@ -6,6 +6,14 @@
 
 <em> Visit complete live project [lets-blog.netlify.app/all_blogs](https://lets-blog.netlify.app/all_blogs) </em> 
 
+# Contents
+
+- [Features](#features)
+- [Tech used](#tech-used)
+- [How get the project](#how-to-get-the-project) 
+- [Run the project using docker](#run-the-project-using-docker) 
+- [API endpoints](#api-endpoints) 
+
 ## Features:
 - bloggers can create their profiles (token-based authentication)
 - bloggers can edit their profile
@@ -20,37 +28,28 @@
 **Runtime environment**
 - [x] Node.js
 
-**API for movies & their metadata**
-- [x] OMDB API
-
 **Database**
 - [x] MongoDB
 
-**Dependencies**
-- [x] bcrypt: ^5.0.1,
-- [x] cors: ^2.8.5,
-- [x] dotenv: ^8.2.0,
-- [x] express: ^4.17.1,
-- [x] http-errors: ^1.8.0,
-- [x] joi: ^17.4.0,
-- [x] jsonwebtoken: ^8.5.1,
-- [x] mongoose: ^5.12.2
+**Image storage service**
+- [x] Cloudinary
 
-## How to install & run:
-### Using Git (recommended)
+**Testing framework**
+- [x] Jest
+
+**Containerization tool**
+- [x] Docker
+
+## How get the project:
+#### Using Git (recommended)
 1. Navigate & open CLI into the directory where you want to put this project & Clone this project (will be cloned inside myProject folder) using this command.
    
 ```bash
 git clone https://github.com/tazbin/blog-website-backend-nodejs-REST-API.git ./myProject
 ```
-### Using manual download ZIP
+#### Using manual download ZIP
 1. Download repository
 2. Extract the zip file, navigate into it & copy the folder to your desired directory
-
-### Install npm dependencies after cloning or downloading
-```bash
-npm install
-```
 
 ### Setting up environments
 1. There is a file named `.env.example` on the root directory of the project
@@ -58,19 +57,50 @@ npm install
 3. The `.env` file is already ignored, so your credentials inside it won't be committed
 4. Change the values of the file. Make changes of comment to the `.env.example` file while adding new constants to the `.env` file.
 
-### Run the project
-```bash
-npm start
-```
+### Run the project using docker
+1. To build **docker image**
+    ```bash
+    docker compose build --no-cache
+    ```
 
-You can be sure that the server is running by checking this output in the command window
-```bash
-server running at port 3000...
-mongodb successfully connected...
-mongodb connected...
-```
+2. To run the **containers** in detached mode (wait for a while for database connection)
+    ```bash
+    docker compose up -d
+    ```
 
-Press CTRL + C to stop the server.
+3. To view running **containers**
+    ```bash
+    docker container ps
+    ```
+
+4. To view **API logs**
+    ```bash
+    docker logs letsblog-api-c
+    ```
+
+5. To **run tests**, first enter within the API container
+   - on windows CMD (not switching to bash)
+        ```bash
+        docker exec -it letsblog-api-c /bin/sh
+        ```
+   - on windows CMD (after switching to bash)
+        ```bash
+        docker exec -it letsblog-api-c //bin//sh
+        ```
+        or
+        ```bash
+        winpty docker exec -it letsblog-api-c //bin//sh
+        ```
+    now run **test command**
+    ```bash
+    npm test
+    ```
+6. To exit from **API container**, press <kbd>Ctrl</kbd>+<kbd>D</kbd> on terminal
+
+7. To **stop** the containers
+    ```bash
+    docker compose down
+    ```
 
 ## API endpoints:
 
