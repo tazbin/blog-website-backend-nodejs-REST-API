@@ -6,7 +6,7 @@
 
 <em> Visit complete live project [lets-blog.netlify.app/all_blogs](https://lets-blog.netlify.app/all_blogs) </em> 
 
-# Contents
+### Contents
 
 - [Features](#features)
 - [Tech used](#tech-used)
