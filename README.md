@@ -51,13 +51,13 @@ git clone https://github.com/tazbin/blog-website-backend-nodejs-REST-API.git ./m
 1. Download repository
 2. Extract the zip file, navigate into it & copy the folder to your desired directory
 
-### Setting up environments
+## Setting up environments
 1. There is a file named `.env.example` on the root directory of the project
 2. Create a new file by copying & pasting the file on the root directory & rename it to just `.env`
 3. The `.env` file is already ignored, so your credentials inside it won't be committed
 4. Change the values of the file. Make changes of comment to the `.env.example` file while adding new constants to the `.env` file.
 
-### Run the project using docker
+## Run the project using docker
 1. To build **docker image**
     ```bash
     docker compose build --no-cache
