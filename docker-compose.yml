@@ -1,0 +1,35 @@
+version: '3.9'
+
+services: 
+    # MongoDB service
+    mongo_db:
+        container_name: letsblog-db-c
+        image: mongo:latest
+        restart: always
+        ports:
+            - 2717:27017
+        volumes:
+            - mongo_db:/data/db
+
+    # Node API servcie
+    api:
+        build: .
+        ports:
+            - 3000:3000
+        volumes: 
+            - .:/usr/src/app
+            - /usr/src/app/node_modules
+        container_name: letsblog-api-c
+        environment: 
+            PORT: ${PORT}
+            MONGODB_URL: mongodb://mongo_db:27017/letsBlog
+            accessTokenKey: ${accessTokenKey}
+            refreshTokenKey: ${refreshTokenKey}
+            CLOUD_NAME: ${CLOUD_NAME}
+            CLOUDINARY_API_KEY: ${CLOUDINARY_API_KEY}
+            API_SECRET: ${API_SECRET}
+        depends_on: 
+            - mongo_db
+
+volumes:
+    mongo_db: {}
