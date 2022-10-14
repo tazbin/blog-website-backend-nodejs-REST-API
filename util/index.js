@@ -38,9 +38,30 @@ makeObjectExcept = (obj, props) => {
     return newObj;
 }
 
+combineArrayObjectAndArray = (obj, objFields, array, arrayFieldName) => {
+    let result = [];
+    let sampleObj = {};
+    const length = obj.length;
+
+    for(let i=0; i<length; i++) {
+
+        objFields.forEach(a => {
+            sampleObj[a] = obj[i][a];
+        });
+
+        sampleObj[arrayFieldName] = array[i];
+        result.push(sampleObj);
+        sampleObj = {};
+
+    }
+
+    return result;
+}
+
 // exports
 module.exports = {
     getCurretDate,
     makeObjectSelected,
-    makeObjectExcept
+    makeObjectExcept,
+    combineArrayObjectAndArray
 }
