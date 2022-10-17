@@ -42,10 +42,10 @@
 
 ## How to get the project:
 #### Using Git (recommended)
-1. Navigate & open CLI into the directory where you want to put this project & Clone this project (will be cloned inside myProject folder) using this command.
+1. Navigate & open CLI into the directory where you want to put this project & Clone this project using this command.
    
 ```bash
-git clone https://github.com/tazbin/blog-website-backend-nodejs-REST-API.git ./myProject
+git clone https://github.com/tazbin/blog-website-backend-nodejs-REST-API.git
 ```
 #### Using manual download ZIP
 1. Download repository
